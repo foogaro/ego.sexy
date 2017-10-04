@@ -36,9 +36,8 @@ public class MatchServiceTest {
         //int collision = x.getTake() & y.getGive();
         int collision = y.getGive() & x.getTake();
         System.out.println("collision = " + collision);
-        boolean match = (y.getGive() & x.getTake()) > 0;
-        System.out.println("match = " + match);
-        Assert.assertTrue(match);
+        System.out.println("match = " + (collision > 0));
+        Assert.assertTrue(collision > 0);
     }
 
     @Test
@@ -62,9 +61,8 @@ public class MatchServiceTest {
         System.out.println("y: " + y);
         int collision = x.getTake() & y.getGive();
         System.out.println("collision = " + collision);
-        boolean match = (x.getTake() & y.getGive()) > 0;
-        System.out.println("match = " + match);
-        Assert.assertFalse(match);
+        System.out.println("match = " + (collision > 0));
+        Assert.assertFalse(collision > 0);
     }
 
     public void testGeo() {
